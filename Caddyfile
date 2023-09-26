@@ -1,0 +1,110 @@
+devnet-delegation-api.multiversx.com {
+    tls internal
+
+    @options {
+        method OPTIONS
+    }
+    header {
+        Access-Control-Allow-Origin *
+        Access-Control-Allow-Credentials true
+        Access-Control-Allow-Methods *
+        Access-Control-Allow-Headers *
+        defer
+    }
+
+    reverse_proxy {
+        to localhost:3005
+        header_down -Access-Control-Allow-Origin
+    }
+
+    respond @options 204
+}
+
+devnet-socket-fra.multiversx.com {
+    tls internal
+
+    @options {
+        method OPTIONS
+    }
+    header {
+        Access-Control-Allow-Origin *
+        Access-Control-Allow-Credentials true
+        Access-Control-Allow-Methods *
+        Access-Control-Allow-Headers *
+        defer
+    }
+
+    reverse_proxy {
+        to localhost:3006
+        header_down -Access-Control-Allow-Origin
+    }
+
+    respond @options 204
+}
+
+devnet-socket-fra.elrond.com {
+    tls internal
+
+    @options {
+        method OPTIONS
+    }
+    header {
+        Access-Control-Allow-Origin *
+        Access-Control-Allow-Credentials true
+        Access-Control-Allow-Methods *
+        Access-Control-Allow-Headers *
+        defer
+    }
+
+    reverse_proxy {
+        to localhost:3006
+        header_down -Access-Control-Allow-Origin
+    }
+
+    respond @options 204
+}
+
+devnet-gateway.multiversx.com {
+    tls internal
+
+    @options {
+        method OPTIONS
+    }
+    header {
+        Access-Control-Allow-Origin *
+        Access-Control-Allow-Credentials true
+        Access-Control-Allow-Methods *
+        Access-Control-Allow-Headers *
+        defer
+    }
+
+    reverse_proxy {
+        to localhost:8989
+        header_down -Access-Control-Allow-Origin
+    }
+
+    respond @options 204
+
+}
+
+devnet-api.multiversx.com {
+    tls internal
+
+    @options {
+        method OPTIONS
+    }
+    header {
+        Access-Control-Allow-Origin *
+        Access-Control-Allow-Credentials true
+        Access-Control-Allow-Methods *
+        Access-Control-Allow-Headers *
+        defer
+    }
+
+    reverse_proxy {
+        to localhost:3001
+        header_down -Access-Control-Allow-Origin
+    }
+
+    respond @options 204
+}
